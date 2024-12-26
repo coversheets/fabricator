@@ -55,3 +55,42 @@ storage:
           TOOLBOX_DOCKER_IMAGE=ghcr.io/githedgehog/toolbox
           TOOLBOX_DOCKER_TAG=latest
           TOOLBOX_USER=root
+
+    - path: /etc/systemd/network/enp2s0.network
+      mode: 0644
+      contents:
+        inline: |
+          [Match]
+          Name=enp2s0
+          Type=ether
+
+          [Network]
+          LLDP=yes
+          EmitLLDP=yes
+          Description=Management Interface
+
+    - path: /etc/systemd/network/enp2s1.network
+      mode: 0644
+      contents:
+        inline: |
+          [Match]
+          Name=enp2s1
+          Type=ether
+
+          [Network]
+          LLDP=yes
+          EmitLLDP=yes
+          Description=Data Plane Interface 1
+
+    - path: /etc/systemd/network/enp2s2.network
+      mode: 0644
+      contents:
+        inline: |
+          [Match]
+          Name=enp2s2
+          Type=ether
+
+          [Network]
+          LLDP=yes
+          EmitLLDP=yes
+          Description=Data Plane Interface 2
