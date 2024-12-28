@@ -78,7 +78,7 @@ func (c *ControlUpgrade) Run(ctx context.Context) error {
 	}
 
 	backoff := wait.Backoff{
-		Steps:    10,
+		Steps:    17,
 		Duration: 500 * time.Millisecond,
 		Factor:   1.5,
 		Jitter:   0.1,
@@ -187,7 +187,7 @@ func (c *ControlUpgrade) uploadAirgap(ctx context.Context, username, password st
 	}
 
 	backoff := wait.Backoff{
-		Steps:    10,
+		Steps:    17,
 		Duration: 500 * time.Millisecond,
 		Factor:   1.5,
 		Jitter:   0.1,

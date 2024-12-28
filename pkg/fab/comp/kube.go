@@ -137,7 +137,7 @@ func EnforceKubeInstall(ctx context.Context, kube client.Client, cfg fabapi.Fabr
 			var err error
 
 			backoff := wait.Backoff{
-				Steps:    10,
+				Steps:    17,
 				Duration: 500 * time.Millisecond,
 				Factor:   1.5,
 				Jitter:   0.1,
